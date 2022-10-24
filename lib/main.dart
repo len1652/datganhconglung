@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:project_g4/destination_page.dart';
-import 'package:project_g4/home_pagedart.dart';
-import 'package:project_g4/thaylam.dart';
+import 'package:project_g4/store/provider/product_provider.dart';
+import 'package:project_g4/store/provider/homeitem/productlist_page.dart';
+import 'package:project_g4/store/provider/view.dart';
+import 'package:provider/provider.dart';
+
 
 void main() {
   runApp(
-    MaterialApp(
-      home: DestinationPagetow()
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => ProductProvider())],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen(),
+      )
     )
   );
-
 }
+
+
+
+
